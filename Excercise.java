@@ -9,9 +9,14 @@ public class SeleniumSample {
 		WebDriver driver= new FirefoxDriver();
 		String baseUrl="http://only-testing-blog.blogspot.in/2013";
 		driver.get(baseUrl);
+		//open FF
+		
 		driver.manage().window().maximize();
+		//open maximiza
+		
 		driver.findElement(By.name("fname")).sendKeys("Hoang Ha");
 		// check first name
+		
 		driver.findElement(By.id("text4")).sendKeys("check");
 		driver.findElement(By.xpath("//*[@value='Bike']")).click();
 		driver.findElement(By.xpath("//*[@value='Car']")).click();
