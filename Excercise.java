@@ -11,24 +11,27 @@ public class SeleniumSample {
 		driver.get(baseUrl);
 		driver.manage().window().maximize();
 		driver.findElement(By.name("fname")).sendKeys("Hoang Ha");
-		//driver.findElement(By.name("lname")).sendKeys("abcd");
+		// check first name
 		driver.findElement(By.id("text4")).sendKeys("check");
 		driver.findElement(By.xpath("//*[@value='Bike']")).click();
-		// check bike
 		driver.findElement(By.xpath("//*[@value='Car']")).click();
+		// check bike & car
+		
 		driver.findElement(By.xpath("//*[@value='male']")).click();
-		//radio
 		driver.findElement(By.xpath("//*[@value='female']")).click();
+		//Checkmale &female
+		
 		//driver.findElement(By.xpath("//select /option[@value='Russia' and  text()='Audi']")).click();
 		Select orderBy = new Select(driver.findElement(By.xpath("//select")));
 		orderBy.selectByIndex(2);
 		orderBy.selectByVisibleText("Audi");
-		// check table
+		// check combobox
+		
 		driver.findElement(By.xpath("//select/option[@value='Mexico']")).click();
 		driver.findElement(By.xpath("//select/option[@value='Spain']")).click();
 		driver.findElement(By.xpath("//*[@value='->']")).click();
+		//check table
 		
-		//check confirmation box
 		driver.findElement(By.xpath("//*[@value='Show Me Alert']")).click();
 		String message="Hi.. This is alert message!";
 		message = driver.switchTo().alert().getText();
@@ -40,10 +43,11 @@ public class SeleniumSample {
 		message2=driver.switchTo().alert().getText();
 		driver.switchTo().alert().accept();
 		System.out.println(message2);
+		//check confirmation box
 		
-		//verify 24
+	
 		driver.findElement(By.xpath("//td[text()='24']"));
-
+		//verify 24
 	}
 
 }
